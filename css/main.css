@@ -4,11 +4,94 @@
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
   }
-body {
-    background-color: #3d64e6;
+
+
+/* Day Theme by Default */
+
+:root {
+    --bg-color-box: #f7c59f;
+    --text-color-box: #222a43;
+    --text-color-box-light: #585d72;
+    --button-color-text: #ffffff;
+    --text-color: #111111;
+    --bg-color: #faf3dd;
+    --button-color: #003566;
+    --warming-color: #ff465a;
+    --shadow-color: rgba(8, 21, 65, 0.3);
 }
+
+body.dark {
+  --bg-color-box: #001d3d;
+  --text-color-box: #f7c59f;
+  --text-color-box-light: #faf3dd;
+  --text-color: #ffffff;
+  --bg-color: #000814;
+  --button-color: #aed9e0;
+  --button-color-text: #000814;
+  --warming-color: #ff465a;
+  --shadow-color: rgba(255, 255, 255, 0.3);
+}
+
+body {
+    background-color: var(--bg-color);
+}
+
+/* Start Styles for Switch Button */
+
+.switch-container {
+  position: fixed;
+  top: 1rem;
+  right: calc(100vw/2 - 25px);
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0;
+  right: 0; bottom: 0;
+  background-color: #003566;
+  transition: 0.4s;
+  border-radius: 24px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: #fcca46;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #fcca46;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+  background-color: #003566;
+}
+
+/* End Styles for Switch Button */
+
 .container {
-    background-color: #ffffff;
+    background-color: var(--bg-color-box);
     width: 80vw;
     max-width: 37.5em;
     padding: 3em 2.5em;
@@ -16,62 +99,73 @@ body {
     transform: translate(-50%, -50%);
     top: 50%;
     left: 50%;
-    border-radius: 0.62em;
-    box-shadow: 0 1.25em 1.8em rgba(8, 21, 65, 0.25);
+    border-radius: 4em;
+    box-shadow: 0 0 5em var(--shadow-color);
 }
+
 .search-wrapper {
     display: grid;
     grid-template-columns: 9fr 3fr;
     gap: 1.25em;
 }
+
 .search-wrapper button {
     font-size: 1em;
-    background-color: #3d64e6;
-    color: #ffffff;
+    background-color: var(--button-color);
+    color: var(--button-color-text);
     padding: 0.8em 0;
     border: none;
     border-radius: 1.5em;
 }
+
 .search-wrapper input {
     font-size: 1em;
     padding: 0 0.62em;
     border: none;
-    border-bottom: 2px solid #3d64e6;
+    border-bottom: 2px solid var(--button-color);
     outline: none;
-    color: #222a43;
+    color: var(--text-color-box);
+    background-color: var(--bg-color-box);
 }
+
 #result {
     margin-top: 1.25em;
 }
+
 .container .flag-img {
     display: block;
     width: 45%;
     min-width: 7.5em;
     margin: 1.8em auto 1.2em auto;
 }
+
 .container h2 {
     font-weight: 600;
-    color: #222a43;
+    color: var(--text-color-box);
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 2px;
     margin-bottom: 1.8em;
 }
+
 .data-wrapper {
     margin-bottom: 1em;
     letter-spacing: 0.3px;
 }
+
 .container h4 {
     display: inline;
     font-weight: 500;
-    color: #222a43;
+    color: var(--text-color-box);
 }
+
 .container span {
-    color: #5d6274;
+    color: var(--text-color-box-light);
 }
+
 .container h3 {
     text-align: center;
     font-size: 1.2em;
     font-weight: 400;
-    color: #ff465a;
+    color: var(--warming-color);
 }

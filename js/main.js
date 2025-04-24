@@ -2,14 +2,14 @@ let searchBtn = document.getElementById("search-btn");
 let countryInp = document.getElementById("country-inp");
 
 let currencyTranslations = {};
-fetch('./js/monedas.json')
+fetch('./json/monedas.json')
     .then(res => res.json())
     .then(json => {
         currencyTranslations = json;
     })
 
 let subregionsTranslations = {};
-fetch('./js/subregiones.json')
+fetch('./json/subregiones.json')
     .then(res => res.json())
     .then(json => {
         subregionsTranslations = json;
@@ -17,7 +17,7 @@ fetch('./js/subregiones.json')
 
 let languageTranslations = {};
 
-fetch('./js/idiomas.json')
+fetch('./json/idiomas.json')
   .then(res => res.json())
   .then(json => {
     languageTranslations = json;

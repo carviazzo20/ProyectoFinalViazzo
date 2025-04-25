@@ -169,3 +169,75 @@ input:checked + .slider:before {
     font-weight: 400;
     color: var(--warming-color);
 }
+
+/* Styles Help Button */
+
+#help-btn {
+  position: fixed;
+  bottom: 20px;
+  right: calc(100vw/2 - 25px);;
+  background-color: var(--button-color);
+  color: var(--button-color-text);
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 2px 6px 8px var(--shadow-color);
+  z-index: 1000;
+}
+
+#help-btn:hover {
+  background-color: var(--bg-color-box);
+  color: var(--button-color);
+}
+
+
+.introjs-tooltip {
+  background-color: var(--bg-color-box);  
+  color: var(--text-color-box);           
+  border-radius: 10px;
+  width: 60vw;
+  max-width: 600px;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.introjs-button {
+  background-color: var(--button-color);
+  color: var(--button-color-text);
+  border: none;
+  padding: 6px 12px;
+  border-radius: 5px;
+}
+
+.introjs-button:hover {
+  background-color: var(--button-color-text);
+  color: var(--button-color);
+}
+
+.introjs-tooltip .introjs-arrow {
+  border-color: var(--button-color);  
+}
+
+.introjs-skipbutton {
+  font-size: 1rem !important;
+  padding: 6px 12px !important;
+  background-color: var(--button-color) !important;
+  color: var(--button-color-text) !important;
+  border-radius: 50% !important;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 10px !important;
+  right: 10px !important;
+  transition: background 0.3s;
+}
+
+.introjs-skipbutton:hover {
+  background-color: var(--button-color-text) !important;
+  color: var(--button-color) !important;
+}

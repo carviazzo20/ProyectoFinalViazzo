@@ -241,3 +241,19 @@ input:checked + .slider:before {
   background-color: var(--button-color-text) !important;
   color: var(--button-color) !important;
 }
+
+@media screen and (max-width:640px) {
+  .search-wrapper {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+  }
+
+  .search-wrapper button {
+    width: 120px;
+    justify-self: center;
+  }
+
+  .search-wrapper input {
+    max-width: 80vw;
+  }
+}
